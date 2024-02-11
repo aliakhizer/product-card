@@ -37,23 +37,26 @@
       }
       body {
         background-color: var(--secondary-color);
+
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+      img {
+        display: block;
+        max-width: 100%;
       }
       .product-container {
-        max-width: 375px;
-        margin: 0 auto;
-        margin: 25px 10px;
-        border-radius: 5%;
+        border-radius: 12px;
         background-color: var(--secondary-color-1);
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+        max-width: 400px;
       }
-      .product-image {
-        width: 100%;
-        border-radius: 5%;
-        display: block;
-      }
+
       .product-info {
-        padding: 10px;
+        padding: 18px 26px;
       }
       .product-type {
         text-transform: uppercase;
@@ -99,36 +102,37 @@
       .cart-text {
         margin-left: 10px;
       }
-      @media only screen and (min-width: 993px) {
+      @media only screen and (min-width: 720px) {
         .product-container {
           flex-direction: row;
-          justify-content: center;/not working why ?
-          align-items: center;
-          min-width: 600px;
+          max-width: 632px;
         }
         .product-image {
-          width: 300px;
-          height: 500px;
+          width: 50%;
         }
         .product-info {
-          padding: 20px;
+          padding: 20px 30px;
+          width: 50%;
         }
         .product-description {
-          max-width: 220px;
+          max-width: unset;
         }
         .product-name {
-          max-width: 280px;
+          max-width: unset;
         }
       }
     </style>
   </head>
   <body>
     <div class="product-container">
-      <img
-        class="product-image"
-        src="./images/image-product-mobile.jpg"
-        alt="Perfumer-img"
-      />
+      <picture class="product-image">
+        <source
+          media="(min-width: 720px)"
+          srcset="./images/image-product-desktop.jpg"
+        />
+
+        <img src="./images/image-product-mobile.jpg" />
+      </picture>
       <div class="product-info">
         <p class="product-type">Perfume</p>
         <h1 class="product-name">Gabrielle Essence Eau De Parfum</h1>
@@ -141,10 +145,13 @@
           <span class="original-price"> $169.99 </span>
         </div>
         <div class="add-to-cart">
-          <div class="cart-icon">
-            <img src="./images/icon-cart.svg" alt="cart-icon" />
-          </div>
-          <div class="cart-text">Add to Cart</div>
+          <img
+            class="cart-icon"
+            src="./images/icon-cart.svg"
+            alt="Shoping cart"
+          />
+
+          <span class="cart-text">Add to Cart</span>
         </div>
       </div>
     </div>
