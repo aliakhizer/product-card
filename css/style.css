@@ -65,7 +65,7 @@ img {
 
   justify-content: center;
   padding: 15px;
-  border-radius: 6%;
+  border-radius: 12px;
   margin-bottom: 10px;
 }
 .cart-text {
@@ -74,7 +74,7 @@ img {
 @media only screen and (min-width: 720px) {
   .product-container {
     flex-direction: row;
-    max-width: 632px;
+    max-width: 720px;
   }
   .product-image {
     width: 50%;
@@ -84,9 +84,9 @@ img {
     width: 50%;
   }
   .product-description {
-    max-width: unset;
+    max-width: 207px;
   }
   .product-name {
-    max-width: unset;
+    max-width: 220px;
   }
 }
